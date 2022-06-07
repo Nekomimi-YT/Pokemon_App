@@ -7,6 +7,10 @@ body {
   font-size: 18px;
   line-height: 1.5;
   margin-left: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../img/government.jpg');
+  /*Photo by Katie Moum on Unsplash*/
 }
 
 h1 {
