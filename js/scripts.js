@@ -84,12 +84,12 @@ let tradeList = [
 ];
 
 for (let i = 0; i < tradeList.length; i++) {  
-  document.write(tradeList[i][0].name + ': ' + tradeList[i][2].party + ' representing ' + tradeList[i][1].state + '<br>' +
-  'Total trade volume: ' + tradeList[i][4].tradeVolume + '<br>' + 
-  'Top Traded Companies by Ticker: ' + tradeList[i][5].topTenTickers);
+  document.write(`${tradeList[i][0].name}: ${tradeList[i][2].party} representing ${tradeList[i][1].state}<br>Total trade volume: 
+  ${tradeList[i][4].tradeVolume}<br>Stock purchases:${tradeList[i][3].tradeType[0].purchase} *** Stock sales:
+  ${tradeList[i][3].tradeType[1].sale}<br>Top Traded Companies by Ticker: ${tradeList[i][5].topTenTickers}`);
   
   if (tradeList[i][5].topTenTickers.length < 10) {
-    document.write('*Fewer companies traded overall');
+    document.write('<em> *Fewer companies traded overall </em>');
   }
   
   document.write('<br><br>')
