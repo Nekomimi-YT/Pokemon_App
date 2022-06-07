@@ -4,7 +4,10 @@ Using data from the first row of representatives for this task:
 
 API link: https://housestockwatcher.com/api
 
-Data is public disclosure of stock trades made by members of the US House of Representatives.
+Data is public disclosure of stock trades made by members of the US House of Representatives. 
+Each array in the array tradeList organizes data for one representative - name, state they represent, 
+political party, the type of trade (purchase or sale), the total trade volume (total amount of 
+money exchanged in both buy and sell transactions), and the top ten company tickets traded by share volume. 
 */
 
 let tradeList = [
