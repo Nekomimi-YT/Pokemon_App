@@ -10,6 +10,7 @@ political party, the type of trade (purchase or sale), the total trade volume (t
 money exchanged in both buy and sell transactions), and the top ten company tickets traded by share volume. 
 */
 
+// Current short list of representatives
 let tradeList = [
   [
     {name: 'Hon. Virginia Foxx'},
@@ -49,7 +50,7 @@ let tradeList = [
     },
     {tradeVolume: '~$48,003.00'},
     {topTenTickers: [
-      'RIVN', ' TXN', ' NXPI', ' ON', ' D', ' AXP ' //Not sure whether to end list of 10  at 6 or leave blank 4
+      'RIVN', ' TXN', ' NXPI', ' ON', ' D', ' AXP'
       ]
     }
   ],
@@ -83,11 +84,13 @@ let tradeList = [
   ]
 ];
 
+//printing representative's information to the DOM
 for (let i = 0; i < tradeList.length; i++) {  
   document.write(`${tradeList[i][0].name}: ${tradeList[i][2].party} representing ${tradeList[i][1].state}<br>Total trade volume: 
   ${tradeList[i][4].tradeVolume}<br>Stock purchases:${tradeList[i][3].tradeType[0].purchase} *** Stock sales:
   ${tradeList[i][3].tradeType[1].sale}<br>Top Traded Companies by Ticker: ${tradeList[i][5].topTenTickers}`);
   
+  //searching for less than 10 companies traded and noting that with a comment in the DOM
   if (tradeList[i][5].topTenTickers.length < 10) {
     document.write('<em> *Fewer companies traded overall </em>');
   }
