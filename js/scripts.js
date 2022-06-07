@@ -21,7 +21,7 @@ let tradeList = [
     },
     {tradeVolume: '~$6,827,627.00'},
     {topTenTickers: [
-      'CWEN.A', 'OLP', 'T', 'PPL', 'BP', 'NHI', 'SO', 'DUK', 'BXMT', 'AM'
+      'CWEN.A', ' OLP', ' T', ' PPL', ' BP', ' NHI', ' SO', ' DUK', ' BXMT', ' AM'
       ]
     }
   ],
@@ -35,7 +35,7 @@ let tradeList = [
     },
     {tradeVolume: '~$5,348,814.00'},
     {topTenTickers: [
-      'RUN', 'SH', 'PSQ', 'IWN', 'COLD', 'BSX', 'BKNG', 'GM', 'IFF', 'NFLX'
+      'RUN', ' SH', ' PSQ', ' IWN', ' COLD', ' BSX', ' BKNG', ' GM', ' IFF', ' NFLX'
       ]
     }
   ],
@@ -49,7 +49,7 @@ let tradeList = [
     },
     {tradeVolume: '~$48,003.00'},
     {topTenTickers: [
-      'RIVN', 'TXN', 'NXPI', 'ON', 'D', 'AXP', '', '', '', '' //Not sure whether to end list of 10  at 6 or leave blank 4
+      'RIVN', ' TXN', ' NXPI', ' ON', ' D', ' AXP ' //Not sure whether to end list of 10  at 6 or leave blank 4
       ]
     }
   ],
@@ -63,7 +63,7 @@ let tradeList = [
     },
     {tradeVolume: '~$918,537.50'},
     {topTenTickers: [
-      'FCEL', 'PLUG', 'CLNE', 'BE', 'T', 'JNJ', 'KPLT', 'NVVE', 'BLDP', 'KPLTW'
+      'FCEL', ' PLUG', ' CLNE', ' BE', ' T', ' JNJ', ' KPLT', ' NVVE', ' BLDP', ' KPLTW'
       ]
     }
   ],
@@ -72,13 +72,18 @@ let tradeList = [
     {state: 'New York'},
     {party: 'Democrat'},
     {tradeType: [
-      {'purchase': 57}, {'sale': 41}
+      {purchase: 57}, {sale: 41}
       ]
     },
     {tradeVolume: '~$3,441,549.00'},
     {topTenTickers: [
-      'MS', 'APPL', 'DG', 'BBH', 'CG', 'PYPL', 'SQ', 'AMD', 'GNRC', 'CTRL'
+      'MS', ' APPL', ' DG', ' BBH', ' CG', ' PYPL', ' SQ', ' AMD', ' GNRC', ' CTRL'
       ]
     }
   ]
 ];
+
+for (let i = 0; i < tradeList.length; i++) {
+  document.write(tradeList[i][0].name + ', a ' + tradeList[i][2].party + ' representing ' + tradeList[i][1].state + 
+  ' has traded a total of ' + tradeList[i][4].tradeVolume + '.' + '<br>' + 'Top Traded Companies by Ticker: ' + tradeList[i][5].topTenTickers + '<br><br>');
+}
