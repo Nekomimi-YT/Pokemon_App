@@ -80,8 +80,8 @@ let tradeList = [
     return tradeList;
   }
 
-  function add(houseMember) {
-    tradeList.push(houseMember);
+  function add(congressRep) {
+    tradeList.push(congressRep);
   }
 
   return {
@@ -91,7 +91,8 @@ let tradeList = [
 })();
 
 //printing representative's information to the DOM
-tradeList.forEach(function(congressRep) {
+//let tradeInformation = tradeRepository.getAll();
+tradeRepository.getAll().forEach(function(congressRep) {
   document.write(`${congressRep.name}: ${congressRep.party} representing ${congressRep.state}<br>Total trade volume: 
   ${congressRep.tradeVolume}<br>Stock purchases: ${congressRep.tradeType.purchase} *** Stock sales: 
   ${congressRep.tradeType.sale}<br>Top Traded Companies by Ticker: ${congressRep.topTenTickers}`);
