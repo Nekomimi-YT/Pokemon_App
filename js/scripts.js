@@ -11,6 +11,8 @@ money exchanged in both buy and sell transactions), and the top ten company tick
 */
 
 // Current short list of representatives
+
+let tradeRepository = (function () {
 let tradeList = [
   {
     name: 'Hon. Virginia Foxx',
@@ -73,6 +75,20 @@ let tradeList = [
     ]
   }
 ];
+
+  function getAll() {
+    return tradeList;
+  }
+
+  function add(houseMember) {
+    tradeList.push(houseMember);
+  }
+
+  return {
+    getAll,
+    add
+  };
+})();
 
 //printing representative's information to the DOM
 tradeList.forEach(function(congressRep) {
