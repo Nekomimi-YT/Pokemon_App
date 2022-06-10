@@ -76,13 +76,21 @@ let tradeList = [
   }
 ];
 
+//returns the entire tradeList
   function getAll() {
     return tradeList;
   }
 
-  function add(congressRep) {
+//adds objects to tradeList
+function add(congressRep) {
+  if (typeof congressRep !== 'object') {
+    return 'Additions must be added as objects';
+  }else if (Object.keys(congressRep) !== 'name', 'state', 'party', 'tradeType', 'tradeVolume', 'topTickers') {
+    return 'Object keys invalid'
+  }else{
     tradeList.push(congressRep);
-  }
+  }    
+}
 
   return {
     getAll,
@@ -91,7 +99,6 @@ let tradeList = [
 })();
 
 //printing representative's information to the DOM
-//let tradeInformation = tradeRepository.getAll();
 tradeRepository.getAll().forEach(function(congressRep) {
   document.write(`${congressRep.name}: ${congressRep.party} representing ${congressRep.state}<br>Total trade volume: 
   ${congressRep.tradeVolume}<br>Stock purchases: ${congressRep.tradeType.purchase} *** Stock sales: 
