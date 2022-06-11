@@ -93,21 +93,24 @@ function add(congressRep) {
 }
 
   return {
-    getAll,
-    add
+    getAll: getAll,
+    add: add
   };
 })();
 
 //printing representative's information to the DOM
-tradeRepository.getAll().forEach(function(congressRep) {
+
+let allCongressReps = (function(congressRep) {
   document.write(`${congressRep.name}: ${congressRep.party} representing ${congressRep.state}<br>Total trade volume: 
   ${congressRep.tradeVolume}<br>Stock purchases: ${congressRep.tradeType.purchase} *** Stock sales: 
   ${congressRep.tradeType.sale}<br>Top Traded Companies by Ticker: ${congressRep.topTenTickers}`);
 
-  //searching for less than 10 companies traded and noting that with a comment in the DOM
+//searching for less than 10 companies traded and noting that with a comment in the DOM
   if (congressRep.topTenTickers.length < 10) {
-    document.write('<em> *Fewer companies traded overall </em>');
+   document.write('<em> *Fewer companies traded overall </em>');
   }
   document.write('<br><br>');
   }
 )
+
+tradeRepository.getAll().forEach(allCongressReps);
