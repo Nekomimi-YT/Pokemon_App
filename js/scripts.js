@@ -101,7 +101,22 @@ function add(congressRep) {
 //printing representative's information to the DOM
 
 let allCongressReps = (function(congressRep) {
-  document.write(`${congressRep.name}: ${congressRep.party} representing ${congressRep.state}<br>Total trade volume: 
+  let repList = document.querySelector('.names-list');
+  let listItem = document.createElement('li');
+  let button = document.createElement('button');
+  button.innerText = (congressRep.name);
+  button.classList.add('button-style');
+  listItem.appendChild(button);
+  repList.appendChild(listItem);
+  }
+)
+
+tradeRepository.getAll().forEach(allCongressReps);
+
+
+
+
+/*document.write(`${congressRep.name}: ${congressRep.party} representing ${congressRep.state}<br>Total trade volume: 
   ${congressRep.tradeVolume}<br>Stock purchases: ${congressRep.tradeType.purchase} *** Stock sales: 
   ${congressRep.tradeType.sale}<br>Top Traded Companies by Ticker: ${congressRep.topTenTickers}`);
 
@@ -109,8 +124,23 @@ let allCongressReps = (function(congressRep) {
   if (congressRep.topTenTickers.length < 10) {
    document.write('<em> *Fewer companies traded overall </em>');
   }
-  document.write('<br><br>');
-  }
-)
+  document.write('<br><br>');*/
 
-tradeRepository.getAll().forEach(allCongressReps);
+  /*
+  //Pulls complete representative information by name
+function searchByName(congressRep) {
+
+  //assigning the function I want to execute to a variable 
+let getInfo = (function(congressRep) {
+  if (this.name === congressRep) {
+    return (`${congressRep.name}: ${congressRep.party} representing ${congressRep.state}<br>Total trade volume: 
+    ${congressRep.tradeVolume}<br>Stock purchases: ${congressRep.tradeType.purchase} *** Stock sales: 
+    ${congressRep.tradeType.sale}<br>Top Traded Companies by Ticker: ${congressRep.topTenTickers}`);
+  }
+});
+
+//Use filter to loop through array list and compare value variable congressRep key 'name'
+tradeList.filter(getInfo);
+}
+
+add to the return statement: searchByName: searchByName*/
