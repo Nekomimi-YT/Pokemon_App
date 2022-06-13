@@ -13,68 +13,68 @@ money exchanged in both buy and sell transactions), and the top ten company tick
 // Current short list of representatives
 
 let tradeRepository = (function () {
-let tradeList = [
-  {
-    name: 'Hon. Virginia Foxx',
-    state: 'North Carolina',
-    party: 'Republican',
-    tradeType: {
-      purchase: 220, sale: 34
+  let tradeList = [
+    {
+      name: 'Hon. Virginia Foxx',
+      state: 'North Carolina',
+      party: 'Republican',
+      tradeType: {
+        purchase: 220, sale: 34
+      },
+      tradeVolume: '~$6,827,627.00',
+      topTenTickers: [
+        'CWEN.A', ' OLP', ' T', ' PPL', ' BP', ' NHI', ' SO', ' DUK', ' BXMT', ' AM'
+      ]  
     },
-    tradeVolume: '~$6,827,627.00',
-    topTenTickers: [
-      'CWEN.A', ' OLP', ' T', ' PPL', ' BP', ' NHI', ' SO', ' DUK', ' BXMT', ' AM'
-    ]  
-  },
-  {
-    name: 'Hon. Alan S. Lowenthal',
-    state: 'California',
-    party: 'Democrat',
-    tradeType: {
-      purchase: 260, sale: 356
+    {
+      name: 'Hon. Alan S. Lowenthal',
+      state: 'California',
+      party: 'Democrat',
+      tradeType: {
+        purchase: 260, sale: 356
+      },
+      tradeVolume: '~$5,348,814.00',
+      topTenTickers: [
+        'RUN', ' SH', ' PSQ', ' IWN', ' COLD', ' BSX', ' BKNG', ' GM', ' IFF', ' NFLX'
+      ]
     },
-    tradeVolume: '~$5,348,814.00',
-    topTenTickers: [
-      'RUN', ' SH', ' PSQ', ' IWN', ' COLD', ' BSX', ' BKNG', ' GM', ' IFF', ' NFLX'
-    ]
-  },
-  {
-    name: 'Hon. Aston Donald McEachin',
-    state: 'Virginia',
-    party: 'Democrat',
-    tradeType: {
-      purchase: 0, sale: 0
+    {
+      name: 'Hon. Aston Donald McEachin',
+      state: 'Virginia',
+      party: 'Democrat',
+      tradeType: {
+        purchase: 0, sale: 0
+      },
+      tradeVolume: '~$48,003.00',
+      topTenTickers: [
+        'RIVN', ' TXN', ' NXPI', ' ON', ' D', ' AXP'
+      ]
     },
-    tradeVolume: '~$48,003.00',
-    topTenTickers: [
-      'RIVN', ' TXN', ' NXPI', ' ON', ' D', ' AXP'
-    ]
-  },
-  {
-    name: 'Hon. Austin Scott',
-    state: 'Georgia',
-    party: 'Republican',
-    tradeType: {
-      purchase: 40, sale: 35
+    {
+      name: 'Hon. Austin Scott',
+      state: 'Georgia',
+      party: 'Republican',
+      tradeType: {
+        purchase: 40, sale: 35
+      },
+      tradeVolume: '~$918,537.50',
+      topTenTickers: [
+        'FCEL', ' PLUG', ' CLNE', ' BE', ' T', ' JNJ', ' KPLT', ' NVVE', ' BLDP', ' KPLTW'
+      ]
     },
-    tradeVolume: '~$918,537.50',
-    topTenTickers: [
-      'FCEL', ' PLUG', ' CLNE', ' BE', ' T', ' JNJ', ' KPLT', ' NVVE', ' BLDP', ' KPLTW'
-    ]
-  },
-  {
-    name: 'Hon. Thomas Suozzi',
-    state: 'New York',
-    party: 'Democrat',
-    tradeType: {
-      purchase: 57, sale: 41
-    },
-    tradeVolume: '~$3,441,549.00',
-    topTenTickers: [
-      'MS', ' APPL', ' DG', ' BBH', ' CG', ' PYPL', ' SQ', ' AMD', ' GNRC', ' CTRL'
-    ]
-  }
-];
+    {
+      name: 'Hon. Thomas Suozzi',
+      state: 'New York',
+      party: 'Democrat',
+      tradeType: {
+        purchase: 57, sale: 41
+      },
+      tradeVolume: '~$3,441,549.00',
+      topTenTickers: [
+        'MS', ' APPL', ' DG', ' BBH', ' CG', ' PYPL', ' SQ', ' AMD', ' GNRC', ' CTRL'
+      ]
+    }
+  ];
 
 //returns the entire tradeList
   function getAll() {
@@ -82,31 +82,39 @@ let tradeList = [
   }
 
 //adds objects to tradeList
-function add(congressRep) {
-  if (typeof congressRep !== 'object') {
-    return 'Additions must be added as objects';
-  }else if (Object.keys(congressRep) !== 'name', 'state', 'party', 'tradeType', 'tradeVolume', 'topTickers') {
-    return 'Object keys invalid'
-  }else{
-    tradeList.push(congressRep);
-  }    
-}
+  function add(congressRep) {
+    if (typeof congressRep !== 'object') {
+      return 'Additions must be added as objects';
+    }else if (Object.keys(congressRep) !== 'name', 'state', 'party', 'tradeType', 'tradeVolume', 'topTickers') {
+      return 'Object keys invalid'
+    }else{
+      tradeList.push(congressRep);
+    }    
+  }
 
-//printing representative's information to the DOM
+//printing representative's names to the DOM in button form using 
 
-function addListItem(congressRep) {
-  let repList = document.querySelector('.list');
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
-  button.innerText = (congressRep.name);
-  button.classList.add('button-style');
-  listItem.appendChild(button);
-  repList.appendChild(listItem);
+  function addListItem(congressRep) {
+    //link to <ul class = 'list'> in HTML and create <li>
+    let repList = document.querySelector('.list');
+    let listItem = document.createElement('li');
+    //create a new button element and style
+    let button = document.createElement('button');
+    button.innerText = (congressRep.name);
+    button.classList.add('button-style');
+    //add button to the page
+    listItem.appendChild(button);
+    repList.appendChild(listItem);
+    //when clicked, buttons log name of Congress Representative in the console
+    button.addEventListener('click', function (congressRep) {
+      showDetails(congressRep); //returns pointer event.  Clicked, but no info
+      // showDetails(congressRep.name); returns undefined
+    });  
   }
 
   function showDetails(congressRep) {
     console.log(congressRep);
-  }
+  };
 
   return {
     getAll: getAll,
