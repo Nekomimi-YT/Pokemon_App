@@ -1,3 +1,10 @@
+/* variables for later
+
+:root {
+  --primary-color: #889b73;
+}
+*/
+
 * {
   box-sizing: border-box;
 }
