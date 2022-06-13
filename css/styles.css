@@ -43,6 +43,8 @@ h1 {
   padding-left: 0;
 }
 
+/* Create responsive app design with media queries */
+
 @media only screen and (max-width: 768px) {
   ul, h1 {
     text-align: center;
