@@ -7,10 +7,13 @@ body {
   font-size: 18px;
   line-height: 1.5;
   margin-left: 20px;
+  margin-right: 20px;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url('../img/government.jpg');
   /*Photo by Katie Moum on Unsplash*/
+  background-attachment: fixed;
+  background-position: center center;
 }
 
 h1 {
@@ -18,10 +21,34 @@ h1 {
 }
 
 .button-style {
+  padding: 10px;
+  margin-top: 10px;
   background-color: whitesmoke;
   border-style: outset;
   border-width: 2px;
-  border-color: gray;
+  border-color: #889b73;
   border-radius: 5px;
   font: inherit;
+}
+
+.list-style {
+  list-style: none;
+  padding-left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  ul, h1 {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .button-style {
+    font-size: 16px;
+  }
 }
