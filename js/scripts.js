@@ -92,6 +92,8 @@ function add(congressRep) {
   }    
 }
 
+//printing representative's information to the DOM
+
 function addListItem(congressRep) {
   let repList = document.querySelector('.list');
   let listItem = document.createElement('li');
@@ -102,6 +104,10 @@ function addListItem(congressRep) {
   repList.appendChild(listItem);
   }
 
+  function showDetails(congressRep) {
+    console.log(congressRep);
+  }
+
   return {
     getAll: getAll,
     add: add,
@@ -109,21 +115,7 @@ function addListItem(congressRep) {
   };
 })();
 
-//printing representative's information to the DOM
-
-let allCongressReps = (function(congressRep) {
-  let repList = document.querySelector('.list');
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
-  button.innerText = (congressRep.name);
-  button.classList.add('button-style');
-  listItem.appendChild(button);
-  repList.appendChild(listItem);
-  }
-)
-
 tradeRepository.getAll().forEach(tradeRepository.addListItem);
-
 
 
 
