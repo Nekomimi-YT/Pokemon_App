@@ -92,16 +92,27 @@ function add(congressRep) {
   }    
 }
 
+function addListItem(congressRep) {
+  let repList = document.querySelector('.list');
+  let listItem = document.createElement('li');
+  let button = document.createElement('button');
+  button.innerText = (congressRep.name);
+  button.classList.add('button-style');
+  listItem.appendChild(button);
+  repList.appendChild(listItem);
+  }
+
   return {
     getAll: getAll,
-    add: add
+    add: add,
+    addListItem: addListItem
   };
 })();
 
 //printing representative's information to the DOM
 
 let allCongressReps = (function(congressRep) {
-  let repList = document.querySelector('.names-list');
+  let repList = document.querySelector('.list');
   let listItem = document.createElement('li');
   let button = document.createElement('button');
   button.innerText = (congressRep.name);
@@ -111,7 +122,7 @@ let allCongressReps = (function(congressRep) {
   }
 )
 
-tradeRepository.getAll().forEach(allCongressReps);
+tradeRepository.getAll().forEach(tradeRepository.addListItem);
 
 
 
