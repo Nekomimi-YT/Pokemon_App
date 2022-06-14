@@ -105,15 +105,14 @@ let tradeRepository = (function () {
     //add button to the page
     listItem.appendChild(button);
     repList.appendChild(listItem);
-    //when clicked, buttons log name of Congress Representative in the console
-    button.addEventListener('click', function (congressRep) {
-      showDetails(congressRep); //returns pointer event.  Clicked, but no info
-      // showDetails(congressRep.name); returns undefined
+    //when clicked, buttons log name of Congress Representative to the console
+    button.addEventListener('click', function () {
+      showDetails(congressRep); 
     });  
   }
 
   function showDetails(congressRep) {
-    console.log(congressRep);
+    console.log(congressRep.name);
   };
 
   return {
@@ -127,7 +126,8 @@ tradeRepository.getAll().forEach(tradeRepository.addListItem);
 
 
 
-/*document.write(`${congressRep.name}: ${congressRep.party} representing ${congressRep.state}<br>Total trade volume: 
+/* keeping this code right now so I can review string literal templates
+document.write(`${congressRep.name}: ${congressRep.party} representing ${congressRep.state}<br>Total trade volume: 
   ${congressRep.tradeVolume}<br>Stock purchases: ${congressRep.tradeType.purchase} *** Stock sales: 
   ${congressRep.tradeType.sale}<br>Top Traded Companies by Ticker: ${congressRep.topTenTickers}`);
 
@@ -136,22 +136,3 @@ tradeRepository.getAll().forEach(tradeRepository.addListItem);
    document.write('<em> *Fewer companies traded overall </em>');
   }
   document.write('<br><br>');*/
-
-  /*
-  //Pulls complete representative information by name
-function searchByName(congressRep) {
-
-  //assigning the function I want to execute to a variable 
-let getInfo = (function(congressRep) {
-  if (this.name === congressRep) {
-    return (`${congressRep.name}: ${congressRep.party} representing ${congressRep.state}<br>Total trade volume: 
-    ${congressRep.tradeVolume}<br>Stock purchases: ${congressRep.tradeType.purchase} *** Stock sales: 
-    ${congressRep.tradeType.sale}<br>Top Traded Companies by Ticker: ${congressRep.topTenTickers}`);
-  }
-});
-
-//Use filter to loop through array list and compare value variable congressRep key 'name'
-tradeList.filter(getInfo);
-}
-
-add to the return statement: searchByName: searchByName*/
