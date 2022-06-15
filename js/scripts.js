@@ -2,7 +2,7 @@
 Using data from the first row of representatives for this task:
 (https://housestockwatcher.com/summary_by_rep)
 
-API link: https://housestockwatcher.com/api
+API links: https://housestockwatcher.com/api, https://house-stock-watcher-data.s3-us-west-2.amazonaws.com/data/all_transactions.json
 
 Data is public disclosure of stock trades made by members of the US House of Representatives. 
 Each array in the array tradeList organizes data for one representative - name, state they represent, 
