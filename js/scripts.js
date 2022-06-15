@@ -40,7 +40,7 @@ let tradeRepository = (function () {
     let listItem = document.createElement('li');
     //create a new button element and style
     let button = document.createElement('button');
-    button.innerText = (congressRep.name);
+    button.innerText = (congressRep.representative);
     button.classList.add('button-style');
     //add button to the page
     listItem.appendChild(button);
@@ -52,13 +52,13 @@ let tradeRepository = (function () {
   }
 
   function showDetails(congressRep) {
-    console.log(congressRep.name);
+    console.log(congressRep.representative);
   };
 
   function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
-    }).then(function (json) {  //my aptUrl is already .json.  Do I need this step? 
+    }).then(function(json) {  //my aptUrl is already .json.  Do I need this step? 
       json.results.forEach(function (item) {  //can I create a variable for json.results for an array?
         congressRep = {
           representative: item.representative  //getting the representative name from each item in json array
@@ -67,8 +67,7 @@ let tradeRepository = (function () {
           for (let i = 0; i < json.results.length; i++) {
             if (json.results[i].representative not in distinct) {
               add(congressRep);
-            }else{
-            distinct.push(json.results[i].representative)
+              distinct.push(json.results[i].representative)
             }
           }
         });
