@@ -25,7 +25,7 @@ let tradeRepository = (function () {
   function add(congressRep) {
     if (typeof congressRep !== 'object') {
       return 'Additions must be added as objects';
-    }else if (Object.keys(congressRep) !== 'representative', 'state', 'party', 'tradeType', 'tradeVolume', 'topTickers') {
+    }else if (Object.keys(congressRep) !== 'representative'/*, 'state', 'party', 'tradeType', 'tradeVolume', 'topTickers'*/) {
       return 'Object keys invalid'
     }else{
       tradeList.push(congressRep);
