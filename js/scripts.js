@@ -64,7 +64,7 @@ let tradeRepository = (function () {
           representative: item.representative  //getting the representative name from each item in json array
         };
         let distinct = [] //need to make sure not to duplicate names in the output, so trying to create a function for that
-          for (let i = 0; i < json.results.length; i++) {
+          for (let i = 0; i < json.results.length; i++) {   //is this a good case use for filter()?
             if (json.results[i].representative not in distinct) {
               add(congressRep);
               distinct.push(json.results[i].representative)
