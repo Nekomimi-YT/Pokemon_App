@@ -13,7 +13,7 @@ money exchanged in both buy and sell transactions), and the top ten company tick
 // Current short list of representatives
 
 let tradeRepository = (function () {
-  let pokemonList = [];
+  let tradeList = [];
   let apiUrl = 'https://house-stock-watcher-data.s3-us-west-2.amazonaws.com/data/all_transactions.json';
 
 //returns the entire tradeList
