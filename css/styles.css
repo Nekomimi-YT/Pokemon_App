@@ -46,6 +46,11 @@ h1 {
   font: inherit;
 }
 
+.button-style:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
 .list-style {
   list-style: none;
   padding-left: 0;
@@ -53,7 +58,7 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* style the conainer for the modal. Now- covers entire screen */
+/* style the container for the modal. Now- covers entire screen */
 #modal-container {
   display: none; 
   position: fixed;
