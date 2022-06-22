@@ -4,7 +4,7 @@ Using data from this pokemon App for this task:
 
 */
 
-// Current short list of representatives
+// Creating an IIFE to hold the Pokemon Repository and critical functions
 
 let pokemonRepository = (function () {
   
@@ -106,8 +106,7 @@ let pokemonRepository = (function () {
         }
       });
 
-      //connect pokemon buttons here to display all data
-      
+      //call showModal with each Pokémon's data (from the loadDetails function)
       showModal(item.imageURL, item.height, item.weight, item.types);
     
   })};
