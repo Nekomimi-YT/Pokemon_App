@@ -44,37 +44,43 @@ function add(pokemon) {
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
     buttonContainer.appendChild(pokemonList);
-    //when clicked, buttons log name of Congress Representative to the console
+    //when clicked, buttons initiate the showDetails funtion to show a modal with more information
     button.addEventListener('click', function () {
       showDetails(pokemon); 
     });  
   }
 
   function showDetails(pokemon) {
-    loadDetails(pokemon).then(function () {
+    loadDetails(pokemon).then(function (imageURL, height, weight, types) {
       
       //adding modal template to display pokemon data
   
       let modalContainer = document.querySelector('#modal-container');
 
-      function showModal(title, text) {
+      function showModal() {
         modalContainer.innerHTML = '';
         let modal = document.createElement('div');
         modal.classList.add('modal');
 
+        //creating a close button to exit the modal
         let closeButtonElement = document.createElement('button');
         closeButtonElement.classList.add('modal-close');
         closeButtonElement.innerText = 'Close';
         closeButtonElement.addEventListener('click', hideModal);
 
-        let titleElement = document.createElement('h1');
-        titleElement.innerText = title;
+        //connecting to "#image-container" in the HTML and loading a dynamic image into the container
+        let imageContainer = document.querySelector('#image-container');
+        let imageElement = document.createElement('img');
+        imageElement.src = imageURL;
+        imageContainer.appendChild(imageElement);
 
+        //adding Pokemon data to the modal
         let contentElement = document.createElement('p');
-        contentElement.innerText = text;
+        contentElement.innerText = 'Height: ' + height + '<br>Weight: ' + weight + '<br>Types: ' + types;
 
+        //adding all new elements to the modal
         modal.appendChild(closeButtonElement);
-        modal.appendChild(titleElement);
+        modal.appendChild(imageContainer);
         modal.appendChild(contentElement);
         modalContainer.appendChild(modal);
 
@@ -91,6 +97,7 @@ function add(pokemon) {
           hideModal();  
         }
       });
+
       modalContainer.addEventListener('click', (e) => {
         // Since this is also triggered when clicking INSIDE the modal
         // We only want to close if the user clicks directly on the overlay
@@ -101,9 +108,7 @@ function add(pokemon) {
       });
 
       //connect pokemon buttons here to display all data
-      document.querySelector('#show-modal').addEventListener('click', () => {
-        showModal('Modal title', 'This is the modal content!');
-    });
+      showModal(item.imageURL, item.height, item.weight, item.types);
   })};
 
   function loadList() {
