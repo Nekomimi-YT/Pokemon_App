@@ -7,10 +7,12 @@ Using data from this pokemon App for this task:
 // Current short list of representatives
 
 let pokemonRepository = (function () {
+  
+  //creating the Pokemon List from outside source
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-//returns the entire pokemonList
+  //returns the entire pokemonList
   function getAll() {
     return pokemonList;
   }
@@ -50,9 +52,59 @@ function add(pokemon) {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+      
+      //adding modal template to display pokemon data
+  
+      let modalContainer = document.querySelector('#modal-container');
+
+      function showModal(title, text) {
+        modalContainer.innerHTML = '';
+        let modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        let closeButtonElement = document.createElement('button');
+        closeButtonElement.classList.add('modal-close');
+        closeButtonElement.innerText = 'Close';
+        closeButtonElement.addEventListener('click', hideModal);
+
+        let titleElement = document.createElement('h1');
+        titleElement.innerText = title;
+
+        let contentElement = document.createElement('p');
+        contentElement.innerText = text;
+
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(titleElement);
+        modal.appendChild(contentElement);
+        modalContainer.appendChild(modal);
+
+
+        modalContainer.classList.add('is-visible');
+      }
+
+      function hideModal() {
+        modalContainer.classList.remove('is-visible');
+      }
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+          hideModal();  
+        }
+      });
+      modalContainer.addEventListener('click', (e) => {
+        // Since this is also triggered when clicking INSIDE the modal
+        // We only want to close if the user clicks directly on the overlay
+        let target = e.target;
+        if (target === modalContainer) {
+          hideModal();
+        }
+      });
+
+      //connect pokemon buttons here to display all data
+      document.querySelector('#show-modal').addEventListener('click', () => {
+        showModal('Modal title', 'This is the modal content!');
     });
-  }
+  })};
 
   function loadList() {
     return fetch(apiUrl).then(function (response) {
