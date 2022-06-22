@@ -74,7 +74,7 @@ let pokemonRepository = (function () {
         imageElement.src = imageURL;
         imageContainer.appendChild(imageElement);
 
-        //adding Pokemon data to the modal
+        //adding Pokemon data to the modal - probably not the final layout
         let contentElement = document.createElement('p');
         contentElement.innerText = 'Height: ' + height + '<br>Weight: ' + weight + '<br>Types: ' + types;
 
