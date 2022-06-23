@@ -52,64 +52,59 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      
+      showModal(pokemon);
+    });
+  };
       //adding modal template to display pokemon data
-  
-      let modalContainer = document.querySelector('#modal-container');
+  let modalContainer = document.querySelector('#modal-container');
+  function showModal(item) {
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+    modalContainer.innerHTML = '';
 
-      function showModal(imageURL, height, weight, types) {
-        modalContainer.innerHTML = '';
-        let modal = document.createElement('div');
-        modal.classList.add('modal');
+    //creating a close button to exit the modal
+    let closeButtonElement = document.createElement('button');
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.innerText = 'Close';
+    closeButtonElement.addEventListener('click', hideModal);
 
-        //creating a close button to exit the modal
-        let closeButtonElement = document.createElement('button');
-        closeButtonElement.classList.add('modal-close');
-        closeButtonElement.innerText = 'Close';
-        closeButtonElement.addEventListener('click', hideModal);
+    //connecting to "#image-container" in the HTML and loading a dynamic image into the container
+    let imageContainer = document.querySelector('#image-container');
+    let imageElement = document.createElement('img');
+    imageElement.src = item.imageURL;
+    imageContainer.appendChild(imageElement);
 
-        //connecting to "#image-container" in the HTML and loading a dynamic image into the container
-        let imageContainer = document.querySelector('#image-container');
-        let imageElement = document.createElement('img');
-        imageElement.src = imageURL;
-        imageContainer.appendChild(imageElement);
+    //adding Pokemon data to the modal - probably not the final layout
+    let contentElement = document.createElement('p');
+    contentElement.innerText = item.name + '<br>Height: ' + item.height + '<br>Weight: ' + item.weight + '<br>Types: ' + item.types;
 
-        //adding Pokemon data to the modal - probably not the final layout
-        let contentElement = document.createElement('p');
-        contentElement.innerText = 'Height: ' + height + '<br>Weight: ' + weight + '<br>Types: ' + types;
+    //adding all new elements to the modal
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(imageContainer);
+    modal.appendChild(contentElement);
+    modalContainer.appendChild(modal);
 
-        //adding all new elements to the modal
-        modal.appendChild(closeButtonElement);
-        modal.appendChild(imageContainer);
-        modal.appendChild(contentElement);
-        modalContainer.appendChild(modal);
+    modalContainer.classList.add('is-visible');
+  }
 
-        modalContainer.classList.add('is-visible');
-      }
+  function hideModal() {
+    modalContainer.classList.remove('is-visible');
+  }
 
-      function hideModal() {
-        modalContainer.classList.remove('is-visible');
-      }
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+      hideModal();  
+    }
+  });
 
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-          hideModal();  
-        }
-      });
-
-      modalContainer.addEventListener('click', (e) => {
-        // Since this is also triggered when clicking INSIDE the modal
-        // We only want to close if the user clicks directly on the overlay
-        let target = e.target;
-        if (target === modalContainer) {
-          hideModal();
-        }
-      });
-
-      //call showModal with each Pokémon's data (from the loadDetails function)
-      showModal(item.imageURL, item.height, item.weight, item.types);
-    
-  })};
+  modalContainer.addEventListener('click', (e) => {
+    // Since this is also triggered when clicking INSIDE the modal
+    // We only want to close if the user clicks directly on the overlay
+    let target = e.target;
+    if (target === modalContainer) {
+      hideModal();
+    }
+  });
 
   function loadList() {
     return fetch(apiUrl).then(function (response) {
