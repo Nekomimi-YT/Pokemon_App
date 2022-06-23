@@ -84,7 +84,7 @@ h1 {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
-  background: #fff;
+  background: whitesmoke;
   padding: 15px 15px 35px 15px;
   width: 100%;
   max-width: 450px;
@@ -105,9 +105,10 @@ h1 {
   margin-bottom: 0;
 }
 
+/* control Pokemon image size and add a slight scale effect on hover*/
 .image-element {
   width: 60%;
-  transition: all .4s ease-in-out;
+  transition: all .8s ease-in-out;
 }
 
 .image-element:hover {
@@ -120,7 +121,6 @@ h1 {
 }
 
 /* Create responsive app design with media queries */
-
 @media only screen and (max-width: 992px) {
   .button-container {
     margin: auto;
