@@ -105,6 +105,15 @@ h1 {
   margin-bottom: 0;
 }
 
+.image-element {
+  width: 60%;
+  transition: all .4s ease-in-out;
+}
+
+.image-element:hover {
+  transform: scale(1.07);
+}
+
 #modal-container.is-visible {
   /* CSS for modal container - add your own desired CSS styles here */
   display: block;
