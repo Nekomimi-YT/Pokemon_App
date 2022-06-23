@@ -1,6 +1,5 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? 
-factory(exports) :
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
   (factory((global.WHATWGFetch = {})));
 }(this, (function (exports) { 'use strict';
@@ -43,8 +42,7 @@ factory(exports) :
     var isArrayBufferView =
       ArrayBuffer.isView ||
       function(obj) {
-        return obj && viewClasses.indexOf(Object.prototype.toString.call(obj)) 
-> -1
+        return obj && viewClasses.indexOf(Object.prototype.toString.call(obj)) > -1
       };
   }
 
@@ -226,15 +224,13 @@ factory(exports) :
         this._bodyBlob = body;
       } else if (support.formData && FormData.prototype.isPrototypeOf(body)) {
         this._bodyFormData = body;
-      } else if (support.searchParams && 
-URLSearchParams.prototype.isPrototypeOf(body)) {
+      } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
         this._bodyText = body.toString();
       } else if (support.arrayBuffer && support.blob && isDataView(body)) {
         this._bodyArrayBuffer = bufferClone(body.buffer);
         // IE 10-11 can't handle a DataView body.
         this._bodyInit = new Blob([this._bodyArrayBuffer]);
-      } else if (support.arrayBuffer && 
-(ArrayBuffer.prototype.isPrototypeOf(body) || isArrayBufferView(body))) {
+      } else if (support.arrayBuffer && (ArrayBuffer.prototype.isPrototypeOf(body) || isArrayBufferView(body))) {
         this._bodyArrayBuffer = bufferClone(body);
       } else {
         this._bodyText = body = Object.prototype.toString.call(body);
@@ -245,10 +241,8 @@ URLSearchParams.prototype.isPrototypeOf(body)) {
           this.headers.set('content-type', 'text/plain;charset=UTF-8');
         } else if (this._bodyBlob && this._bodyBlob.type) {
           this.headers.set('content-type', this._bodyBlob.type);
-        } else if (support.searchParams && 
-URLSearchParams.prototype.isPrototypeOf(body)) {
-          this.headers.set('content-type', 
-'application/x-www-form-urlencoded;charset=UTF-8');
+        } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+          this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
         }
       }
     };
@@ -342,8 +336,7 @@ URLSearchParams.prototype.isPrototypeOf(body)) {
       this.url = String(input);
     }
 
-    this.credentials = options.credentials || this.credentials || 
-'same-origin';
+    this.credentials = options.credentials || this.credentials || 'same-origin';
     if (options.headers || !this.headers) {
       this.headers = new Headers(options.headers);
     }
@@ -380,8 +373,7 @@ URLSearchParams.prototype.isPrototypeOf(body)) {
 
   function parseHeaders(rawHeaders) {
     var headers = new Headers();
-    // Replace instances of \r\n and \n followed by at least one space or 
-horizontal tab with a space
+    // Replace instances of \r\n and \n followed by at least one space or horizontal tab with a space
     // https://tools.ietf.org/html/rfc7230#section-3.2
     var preProcessedHeaders = rawHeaders.replace(/\r?\n[\t ]+/g, ' ');
     preProcessedHeaders.split(/\r?\n/).forEach(function(line) {
@@ -472,8 +464,7 @@ horizontal tab with a space
           statusText: xhr.statusText,
           headers: parseHeaders(xhr.getAllResponseHeaders() || '')
         };
-        options.url = 'responseURL' in xhr ? xhr.responseURL : 
-options.headers.get('X-Request-URL');
+        options.url = 'responseURL' in xhr ? xhr.responseURL : options.headers.get('X-Request-URL');
         var body = 'response' in xhr ? xhr.response : xhr.responseText;
         resolve(new Response(body, options));
       };
@@ -517,8 +508,7 @@ options.headers.get('X-Request-URL');
         };
       }
 
-      xhr.send(typeof request._bodyInit === 'undefined' ? null : 
-request._bodyInit);
+      xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit);
     })
   }
 
