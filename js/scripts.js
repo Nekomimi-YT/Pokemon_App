@@ -108,15 +108,18 @@ let pokemonRepository = (function () {
 
     //adding Pokemon data to the modal - probably not the final layout
     let titleElement = document.createElement('h2');
-    let contentElement = document.createElement('p');
+    let heightElement = document.createElement('p');
+    let weightElement = document.createElement('p');
     titleElement.innerText = item.name;
-    contentElement.innerText = 'Height: ' + item.height + 'ft, ' + ' Weight: ' + item.weight + 'lbs';
+    heightElement.innerText = 'Height: ' + item.height; 
+    weightElement.innerText = 'Weight: ' + item.weight;
 
     //adding all new elements to the modal
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(imageContainer);
-    modal.appendChild(contentElement);
+    modal.appendChild(heightElement);
+    modal.appendChild(weightElement);
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
