@@ -45,7 +45,7 @@ h1 {
   font: inherit;
 }
 
-.list-style {
+.list-group {  /*was list-style*/
   list-style: none;
   padding-left: 0;
   display: flex;
