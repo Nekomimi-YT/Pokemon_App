@@ -91,9 +91,29 @@ let pokemonRepository = (function () {
       //adding modal template to display pokemon data
   let modalContainer = document.querySelector('#modal-container');
   function showModal(item) {
-    let modal = document.createElement('div');
-    modal.classList.add('modal');
-    modalContainer.innerHTML = '';
+    let modalBody = $('.modal-body');
+    let modalTitle = $('.modal-title');
+    let modalHeader = $('.modal-header');
+    
+    //clear title and body elements from the modal
+    modalTitle.empty();
+    modalBody.empty();
+
+    //create the name element in modal content
+    let nameElement = $('<h1>' + item.name + '</h1');
+    //create the image in modal content
+    let imageElement = $('<img class="modal-img" style="width: 50%">')
+    imageElement.attr('src', item.imageUrl);
+    //create the height element for modal
+    let heightElement = $('<p>' + 'Height: ' + item.height + '</p');
+    //create the weight element for modal
+    let weightElement = $('<p>' + 'Weight: ' + item.weight + '</p');
+
+
+
+    //let modal = document.createElement('div');
+    //modal.classList.add('modal');
+    //modalContainer.innerHTML = '';
     
     //creating a close button to exit the modal
     let closeButtonElement = document.createElement('button');
