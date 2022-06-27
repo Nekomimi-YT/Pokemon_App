@@ -88,8 +88,10 @@ let pokemonRepository = (function () {
       console.error(e);
     });
   }
-      //adding modal template to display pokemon data
-  let modalContainer = document.querySelector('#modal-container');
+      
+  //let modalContainer = document.querySelector('#modal-container');
+  
+  //adding modal template to display pokemon data
   function showModal(item) {
     let modalBody = $('.modal-body');
     let modalTitle = $('.modal-title');
