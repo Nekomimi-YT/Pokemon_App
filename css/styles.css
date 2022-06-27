@@ -35,20 +35,14 @@ h1 {
   padding-right: 10px;
 }
 
-.button-style {
+.btn-light {
   padding: 10px;
   margin: 10px 5px 10px 5px;
-  background-color: whitesmoke;
   border-style: outset;
   border-width: 2px;
   border-color: black;
   border-radius: 5px;
   font: inherit;
-}
-
-.button-style:hover {
-  cursor: pointer;
-  opacity: 80%;
 }
 
 .list-style {
