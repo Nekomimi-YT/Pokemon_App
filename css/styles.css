@@ -5,16 +5,10 @@
 }
 */
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: Verdana, Tahoma, sans-serif;
   font-size: 18px;
   line-height: 1.5;
-  margin-left: 20px;
-  margin-right: 20px;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url('../img/pokeball_75op.jpg');
@@ -23,19 +17,11 @@ body {
   background-position: center center;
 }
 
-h1 {
-  color: whitesmoke;
+.bg-light {
+  background-color: whitesmoke;
 }
 
-.button-container {
-  width: 60%;
-  margin-left: 5%;
-  margin-right: 2%;
-  padding-left: 20px;
-  padding-right: 10px;
-}
-
-.btn-light {
+/*.btn-light {
   padding: 10px;
   margin: 10px 5px 10px 5px;
   border-style: outset;
@@ -43,60 +29,10 @@ h1 {
   border-color: black;
   border-radius: 5px;
   font: inherit;
-}
+}*/
 
-.list-group {  /*was list-style*/
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* style the container for the modal. Now- covers entire screen */
-#modal-container {
-  display: none; 
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  
-  /* to show it above other content */
-  z-index: 999; 
-  
-  /* to allow scrolling if the screen is not high enough*/
-  overflow: auto; 
-  
-  /* this is used to center the modal (inside) */
-  text-align: center; 
-}
-
-.modal {
-  margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
+.list-group-item { 
   background: whitesmoke;
-  padding: 15px 15px 35px 15px;
-  width: 100%;
-  max-width: 450px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.modal-close {
-  float: right;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  color: gray;
-  text-decoration: underline;
-}
-
-.modal p {
-  margin-bottom: 0;
 }
 
 /* control Pokemon image size and add a slight scale effect on hover*/
@@ -109,12 +45,7 @@ h1 {
   transform: scale(1.07);
 }
 
-#modal-container.is-visible {
-  /* CSS for modal container - add your own desired CSS styles here */
-  display: block;
-}
-
-/* Create responsive app design with media queries */
+/* Create responsive app design with media queries 
 @media only screen and (max-width: 992px) {
   .button-container {
     margin: auto;
@@ -138,4 +69,4 @@ h1 {
   .button-style {
     font-size: 16px;
   }
-}
+}*/
