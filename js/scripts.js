@@ -109,9 +109,13 @@ let pokemonRepository = (function () {
     //create the weight element for modal
     let weightElement = $('<p>' + 'Weight: ' + item.weight + '</p');
 
+    modalTitle.append(nameElement);
+    modalBody.append(imageElement);
+    modalBody.append(heightElement);
+    modalBody.append(weightElement);
+  }
 
-
-    //let modal = document.createElement('div');
+    /*let modal = document.createElement('div');
     //modal.classList.add('modal');
     //modalContainer.innerHTML = '';
     
@@ -165,7 +169,7 @@ let pokemonRepository = (function () {
     if (target === modalContainer) {
       hideModal();
     }
-  });
+  });*/
 
   return {
     add: add,
