@@ -37,7 +37,9 @@ body {
 }*/
 
 .list-group-item { 
-  background: whitesmoke;
+  background: transparent;
+  border: none;
+  text-align: center;
 }
 
 /* control Pokemon image size and add a slight scale effect on hover*/
