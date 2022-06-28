@@ -124,3 +124,21 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
+//search bar function
+document.querySelector('.pokemon-search').addEventListener('submit', function (e) {
+  e.preventDefault();
+  let pokemonSearch = document.querySelector('#pokemonInput').value;
+  document.querySelector('ul').innerHTML = '';
+  if (pokemonSearch === '') {
+      pokemonRepository.getAll().forEach(function (pokemon) {
+          pokemonRepository.addListItem(pokemon);
+      });
+  } else {
+      pokemonRepository.getAll().forEach(function (pokemon) {
+          if (pokemon.name.indexOf(pokemonSearch) > -1) {
+              pokemonRepository.addListItem(pokemon);
+          }
+      });
+  }
+});
