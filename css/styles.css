@@ -17,6 +17,15 @@ body {
   background-position: center center;
 }
 
+h1 {
+  font-size: 25px;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+  }
+
 .btn-light {
   background-color: white;
   padding: 8px;
@@ -47,6 +56,27 @@ body {
   text-align: center;
   list-style: none;
   padding-left: 0;
+}
+
+.modal-content {
+  border-width: 3px;
+  border-color: red;
+  border-radius: 5px;
+  text-align: center;
+
+}
+.modal-header {
+  background-color: #ffd505;
+  justify-content: center;
+}
+
+.modal-img {
+  width:50%;
+  padding: 20px;
+}
+
+.modal-footer {
+  background-color: #ffd505;
 }
 
 /* control Pokemon image size and add a slight scale effect on hover*/
