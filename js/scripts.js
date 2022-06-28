@@ -51,14 +51,13 @@ let pokemonRepository = (function () {
   function addListItem(pokemon) {
     //link to <ul class = 'list'> in HTML and create <li>
     let buttonContainer = document.querySelector('.button-container'); //container for the pokemon name buttons
-    let pokemonList = document.querySelector('.list');
+    let pokemonList = document.querySelector('.list-group');
     let listItem = document.createElement('li');
     listItem.classList.add('list-group-item');
     //create a new button element and style
     let button = document.createElement('button');
     button.innerText = (pokemon.name);
-    button.classList.add('btn');
-    button.classList.add('btn-light');
+    button.classList.add('btn', 'btn-light');
     button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-target', '.modal');
     //add button as a <li>, then <li> to the <ul>, then <ul> to <div> (buttonContainer)
