@@ -18,23 +18,37 @@ body {
 }
 
 .bg-light {
-  background-color: whitesmoke
+  background-color: white;
 }
 
-/*.btn-light {
+.btn-light {
+  background-color: white;
   padding: 10px;
   margin: 10px 5px 10px 5px;
   border-style: outset;
-  border-width: 2px;
+  border-width: 3px;
   border-color: black;
   border-radius: 5px;
   font: inherit;
-}*/
+  width: 200px
+}
+
+.btn-light:hover {
+  cursor: pointer;
+  font-size: 1.01rem;
+  background-color: white;
+  border-style: outset;
+  border-width: 3px;
+  border-color: black;
+  border-radius: 5px;
+}
 
 .list-group-item { 
   background: transparent;
   border: none;
   text-align: center;
+  list-style: none;
+  padding-left: 0;
 }
 
 /* control Pokemon image size and add a slight scale effect on hover*/
