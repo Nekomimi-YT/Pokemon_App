@@ -46,7 +46,7 @@ let pokemonRepository = (function () {
     }
   }
 
-//printing name's names to the DOM in button form using bootstrap
+//printing pokemon names to the DOM in button form using bootstrap
 
   function addListItem(pokemon) {
       let pokemonList = document.querySelector('ul');
