@@ -46,30 +46,24 @@ let pokemonRepository = (function () {
     }
   }
 
-//printing name's names to the DOM in button form using 
+//printing name's names to the DOM in button form using bootstrap
 
   function addListItem(pokemon) {
-    //link to <ul class = 'list'> in HTML and create <li>
-    let buttonContainer = document.querySelector('.button-container'); //container for the pokemon name buttons
-    let pokemonList = document.querySelector('.list-group');
-    let listItem = document.createElement('li');
-    listItem.classList.add('list-group-item');
-    //create a new button element and style
-    let button = document.createElement('button');
-    button.innerText = (pokemon.name);
-    button.classList.add('btn', 'btn-light');
-    button.setAttribute('data-toggle', 'modal');
-    button.setAttribute('data-target', '.modal');
-    //add button as a <li>, then <li> to the <ul>, then <ul> to <div> (buttonContainer)
-    listItem.appendChild(button);
-    pokemonList.appendChild(listItem);
-    buttonContainer.appendChild(pokemonList);
-    //when clicked, buttons initiate the showDetails function to show a modal with more information
-    button.addEventListener('click', function () {
-      showDetails(pokemon); 
-    });  
-  }
-
+      let pokemonList = document.querySelector('ul');
+      let listItem = document.createElement('li');
+      listItem.classList.add('list-group-item', 'col-sm-12', 'col-md-6', 'col-lg-3');
+      let button = document.createElement('button');
+      button.classList.add('btn', 'btn-light', 'm1');
+      button.innerText = (pokemon.name);
+      button.setAttribute('data-toggle', 'modal');
+      button.setAttribute('data-target', '.modal');
+      listItem.appendChild(button);
+      pokemonList.appendChild(listItem);
+      button.addEventListener('click', function () {
+        showDetails(pokemon); 
+      });
+    }
+    
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       showModal(pokemon);
