@@ -2,6 +2,10 @@
 
 :root {
   --primary-color: #white;
+  --blue: #72feff
+  --yellow: #ffd724;
+  --red: #ff2a1e;
+  --green: #4f9100;
 }
 */
 
@@ -19,6 +23,11 @@ body {
 
 h1 {
   font-size: 25px;
+}
+
+.nav-img {
+  width: 120px;
+  border-radius: 10px;
 }
 
 .btn:focus {
@@ -60,13 +69,13 @@ h1 {
 
 .modal-content {
   border-width: 3px;
-  border-color: red;
+  border-color: #ff2a1e;
   border-radius: 5px;
   text-align: center;
 
 }
 .modal-header {
-  background-color: #ffd505;
+  background-color: #ffd724;
   justify-content: center;
 }
 
@@ -76,7 +85,7 @@ h1 {
 }
 
 .modal-footer {
-  background-color: #ffd505;
+  background-color: #ffd724;
 }
 
 /* control Pokemon image size and add a slight scale effect on hover*/
