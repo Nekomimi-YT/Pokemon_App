@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #white;
-  --blue: #72feff
+  --blue: #72feff;
   --yellow: #ffd724;
   --red: #ff2a1e;
   --green: #4f9100;
@@ -13,16 +13,18 @@ body {
   font-family: Verdana, Tahoma, sans-serif;
   font-size: 18px;
   line-height: 1.5;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url('../img/pokeball_75op.jpg');
-  /*Photo by Hannari_eli on Shutterstock.com*/
-  background-attachment: fixed;
-  background-position: center center;
+  background-color: whitesmoke;
 }
 
 h1 {
   font-size: 25px;
+}
+
+.nav-custom {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  background-color: #ff2a1e;
 }
 
 .nav-img {
@@ -30,17 +32,32 @@ h1 {
   border-radius: 10px;
 }
 
+#pokemonInput {
+  border-color: #4f9100;
+  border-style: outset;
+  border-width: 2px;
+  background: whitesmoke;
+}
+
+.form-btn {
+  background-color: #ffd724;
+  color: black;
+  border-color: #4f9100;
+  border-style: outset;
+  border-width: 2px;
+
+}
 .btn:focus {
   outline: none;
   box-shadow: none;
   }
 
 .btn-light {
-  background-color: white;
-  padding: 8px;
+  background-color: #72feff;
+  padding: 6px;
   border-style: outset;
   border-width: 3px;
-  border-color: black;
+  border-color: #4f9100;
   border-radius: 20px;
   font: inherit;
   width: 200px
@@ -48,11 +65,8 @@ h1 {
 
 .btn-light:hover {
   cursor: pointer;
-  background-color: white;
-  border-style: outset;
-  border-width: 3px;
-  border-color: black;
-  border-radius:20px;
+  background-color:#ffd724;
+  border-color: #4f9100;
 }
 
 .page-container {
@@ -68,14 +82,15 @@ h1 {
 }
 
 .modal-content {
-  border-width: 3px;
-  border-color: #ff2a1e;
+  border-width: 5px;
+  border-color: #ffd724;
+  border-style: outset;
   border-radius: 5px;
   text-align: center;
 
 }
 .modal-header {
-  background-color: #ffd724;
+  background-color: #ff2a1e;
   justify-content: center;
 }
 
@@ -85,7 +100,7 @@ h1 {
 }
 
 .modal-footer {
-  background-color: #ffd724;
+  background-color: #ff2a1e;
 }
 
 /* control Pokemon image size and add a slight scale effect on hover*/
