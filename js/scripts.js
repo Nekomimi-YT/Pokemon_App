@@ -54,7 +54,8 @@ let pokemonRepository = (function () {
       listItem.classList.add('list-group-item', 'col-sm-12', 'col-md-6', 'col-lg-3');
       let button = document.createElement('button');
       button.classList.add('btn', 'btn-light', 'btn-search');
-      button.innerText = (pokemon.name);
+      //Capitalize first letter of Pokemon name and add as button text
+      button.innerText = (pokemon.name[0].toUpperCase() + pokemon.name.substring(1));
       button.setAttribute('data-toggle', 'modal');
       button.setAttribute('data-target', '.modal');
       listItem.appendChild(button);
@@ -79,6 +80,20 @@ let pokemonRepository = (function () {
       item.imageUrl = details.sprites.other.dream_world.front_default;
       item.height = details.height;
       item.weight = details.weight;
+      typeList = [];
+      details.types.forEach((typeItem) => { //typeItem = types in the API
+        let name = typeItem.type.name
+        name = name[0].toUpperCase() + name.substring(1);
+        typeList.push(name)
+      });
+    item.types = typeList;
+    abilityList = [];
+      details.abilities.forEach((abilityItem) => { //abiityItem = abilities in the API
+        let name = abilityItem.ability.name
+        name = name[0].toUpperCase() + name.substring(1);
+        abilityList.push(name)
+      });
+    item.abilities = abilityList;
     }).catch(function (e) {
       console.error(e);
     });
@@ -95,7 +110,7 @@ let pokemonRepository = (function () {
     modalBody.empty();
 
     //create the name element in modal content
-    let nameElement = $('<h1>' + item.name + '</h1>');
+    let nameElement = $('<h1>' + item.name[0].toUpperCase() + item.name.substring(1) + '</h1>');
     //create the image in modal content
     let imageElement = $('<img class="modal-img">')
     imageElement.attr('src', item.imageUrl);
@@ -103,11 +118,16 @@ let pokemonRepository = (function () {
     let heightElement = $('<p>' + 'Height: ' + item.height + '</p>');
     //create the weight element for modal
     let weightElement = $('<p>' + 'Weight: ' + item.weight + '</p>');
+    let typeElement = $('<p>' + 'Types: ' + item.types + '</p>');
+    let abilityElement = $('<p>' + 'Abilities: ' + item.abilities + '</p>');
 
     modalTitle.append(nameElement);
     modalBody.append(imageElement);
     modalBody.append(heightElement);
     modalBody.append(weightElement);
+    modalBody.append(typeElement);
+    modalBody.append(abilityElement);
+
   }
 
   //Filter search input against button list
