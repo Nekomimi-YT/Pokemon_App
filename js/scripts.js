@@ -1,6 +1,6 @@
 /* 
 Using first 150 data targets from this pokemon App for this project:
-(https://pokeapi.co/api/v2/pokemon/?limit=150)
+(https://pokeapi.co/api/v2/pokemon/?limit=152)
 
 */
 
@@ -11,7 +11,7 @@ let pokemonRepository = (function () {
   //Create the Pokemon List from outside API source
   
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=152';
 
   //Fetch the pokemon list from the API
   
