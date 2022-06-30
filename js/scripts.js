@@ -110,6 +110,7 @@ let pokemonRepository = (function () {
     modalBody.append(weightElement);
   }
 
+  //Filter search input against button list
   function filterList() {
     let value = searchInput.val().toLowerCase();
   
@@ -142,7 +143,7 @@ pokemonRepository.loadList().then(function() {
   });
 });
 
-//searchbar functionality: filters displayed buttons by input.  
-//Hides all buttons that don't match search input.  
+//Searchbar functionality: filters displayed buttons by input  
+//Hides all buttons that don't match search input  
 let searchInput = $('input');
 searchInput.on('input', pokemonRepository.filterList);
