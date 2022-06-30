@@ -95,7 +95,7 @@ h1 {
 }
 
 .modal-img {
-  width:50%;
+  width: 45%;
   padding: 20px;
 }
 
@@ -103,15 +103,18 @@ h1 {
   background-color: #ff2a1e;
 }
 
-/* control Pokemon image size and add a slight scale effect on hover*/
-.image-element {
-  width: 60%;
-  transition: all .8s ease-in-out;
+@media only screen and (max-width: 576px) {
+
+  .page-container {
+    margin-top: 200px;
+  }
+
 }
 
-.image-element:hover {
-  transform: scale(1.07);
-}
+
+
+
+
 
 /* Create responsive app design with media queries 
 @media only screen and (max-width: 992px) {
