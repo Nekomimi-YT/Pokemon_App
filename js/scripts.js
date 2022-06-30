@@ -49,10 +49,11 @@ let pokemonRepository = (function () {
 //printing pokemon names to the DOM in button form using bootstrap
   function addListItem(pokemon) {
       let pokemonList = document.querySelector('ul');
+      pokemonList.classList.add('pokemonList');
       let listItem = document.createElement('li');
       listItem.classList.add('list-group-item', 'col-sm-12', 'col-md-6', 'col-lg-3');
       let button = document.createElement('button');
-      button.classList.add('btn', 'btn-light');
+      button.classList.add('btn', 'btn-light', 'btn-search');
       button.innerText = (pokemon.name);
       button.setAttribute('data-toggle', 'modal');
       button.setAttribute('data-target', '.modal');
@@ -109,15 +110,31 @@ let pokemonRepository = (function () {
     modalBody.append(weightElement);
   }
 
+  function filterList() {
+    let value = searchInput.val().toLowerCase();
+  
+    $(".pokemonList > li").each(function() {
+        if ($(this).text().toLowerCase().search(value) > -1) {
+            $(this).show();
+        }
+        else {
+            $(this).hide();
+        }
+    });
+  }
+
   return {
     add: add,
     getAll: getAll,
     loadList: loadList,
     loadDetails: loadDetails,
-    addListItem: addListItem
+    addListItem: addListItem,
+    filterList: filterList
   };
 })();
 
+//Create a list of Pokemon name buttons and display on the screen. 
+//When clicked, each button pulls up a modal to display pokemon information
 pokemonRepository.loadList().then(function() {
   // Data is loaded...
   pokemonRepository.getAll().forEach(function(pokemon){
@@ -125,20 +142,7 @@ pokemonRepository.loadList().then(function() {
   });
 });
 
-//search bar function
-document.querySelector('.pokemon-search').addEventListener('submit', function (e) {
-  e.preventDefault();
-  let pokemonSearch = document.querySelector('#pokemonInput').value;
-  document.querySelector('ul').innerHTML = '';
-  if (pokemonSearch === '') {
-      pokemonRepository.getAll().forEach(function (pokemon) {
-          pokemonRepository.addListItem(pokemon);
-      });
-  } else {
-      pokemonRepository.getAll().forEach(function (pokemon) {
-          if (pokemon.name.indexOf(pokemonSearch) > -1) {
-              pokemonRepository.addListItem(pokemon);
-          }
-      });
-  }
-});
+//searchbar functionality: filters displayed buttons by input.  
+//Hides all buttons that don't match search input.  
+let searchInput = $('input');
+searchInput.on('input', pokemonRepository.filterList);
