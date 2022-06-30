@@ -30,6 +30,9 @@ h1 {
 
 .nav-img {
   width: 120px;
+  border-color: #4f9100;
+  border-style: outset;
+  border-width: 2px;
   border-radius: 10px;
 }
 
@@ -79,16 +82,19 @@ h1 {
 
 /*modal styling*/
 .modal-content {
-  border-width: 5px;
-  border-color: #ffd724;
+  border-width: 3px;
+  border-color: #4f9100;
   border-style: outset;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
 
 }
 .modal-header {
   background-color: #ff2a1e;
   justify-content: center;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color:#4f9100
 }
 
 /* fit the modal image inside the modal and add a small scale effect on hover*/
@@ -104,6 +110,9 @@ h1 {
 
 .modal-footer {
   background-color: #ff2a1e;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color:#4f9100
 }
 
 /*additional styling for smaller screens*/
