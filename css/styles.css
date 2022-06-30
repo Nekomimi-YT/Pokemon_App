@@ -41,16 +41,6 @@ h1 {
   background: whitesmoke;
 }
 
-/*remove if not using the search button*/
-.form-btn {
-  background-color: #ffd724;
-  color: black;
-  border-color: #4f9100;
-  border-style: outset;
-  border-width: 2px;
-
-}
-
 /*adding extra margin against fixed-top navbar*/
 .page-container {
   margin-top: 160px;
