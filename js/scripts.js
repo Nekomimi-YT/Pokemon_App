@@ -146,7 +146,7 @@ let pokemonRepository = (function () {
   function filterList() {
     let value = searchInput.val().toLowerCase();
   
-    $(".pokemonList > li").each(function() {
+    $('.pokemonList > li').each(function() {
         if ($(this).text().toLowerCase().search(value) > -1) {
             $(this).show();
         }
