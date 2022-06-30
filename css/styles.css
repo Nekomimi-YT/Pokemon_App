@@ -134,3 +134,10 @@ h1 {
     width: 90px;
   }
 }
+
+@media only screen and (max-width: 395px) {
+
+  .page-container {
+    margin-top: 180px;
+  }
+}
