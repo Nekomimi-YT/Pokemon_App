@@ -116,4 +116,12 @@ h1 {
   .navbar-brand {
     margin: auto;
   }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  .nav-img {
+    width: 90px;
+  }
 }
