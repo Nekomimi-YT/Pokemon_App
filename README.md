@@ -8,9 +8,9 @@ To build a small web application with HTML, CSS, and JavaScript that loads data 
 Users should be able to view a list of data and see more details for a given data item on demand.
 
 ### Key Features
-* App loads data from an external source (API).
-* Users view a list of items from that source.
-* On user action (e.g., clicking on a list item), user views details for that item.
+* App loads the first 152 data objects from an external source: (https://pokeapi.co/api/v2/pokemon/?limit=152)
+* Users view a list of Pokemon items, designed as buttons, from the API.
+* On user action (e.g., clicking on a list item), user views details for that Pokemon item.
 
 ### Technical Details
 
@@ -29,3 +29,7 @@ touch interactions.
 #### Optional and included:
 * The JavaScript code is formatted via Prettier.
 * The app allows searching for Pokémon items.
+
+### Image credits:
+* Pokemon navbar image: Matt Leyva/ Creative Commons Attribution 2.0/ Src: https://commons.wikimedia.org/
+* Favicon image: Designed by me using Canva.com stock images 
