@@ -1,5 +1,5 @@
 /* 
-Using first 150 data targets from this pokemon App for this project:
+Using first 152 data targets from this pokemon App for this project:
 (https://pokeapi.co/api/v2/pokemon/?limit=152)
 
 */
