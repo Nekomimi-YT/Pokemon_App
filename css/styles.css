@@ -1,19 +1,22 @@
-/* variables for later
-
 :root {
-  --primary-color: #whitesmoke;
+  --primary-color: whitesmoke;
   --blue: #72feff;
   --yellow: #ffd724;
   --red: #ff2a1e;
   --green: #4f9100;
+  --dark: black;
+  --nav-elements__border-width: 2px;
+  --body-elements__border-width: 3px;
+  --design-accent__border-width: 1px;
+  --outset-border__style: outset;
+  --solid-border__style: solid;
 }
-*/
 
 body {
   font-family: 'Secular One', sans-serif;
   font-size: 18px;
   line-height: 1.5;
-  background-color: whitesmoke;
+  background-color: var(--primary-color);
 }
 
 h1 {
@@ -22,26 +25,26 @@ h1 {
 
 /*nav bar styling*/
 .nav-custom {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: black;
-  background-color: #ff2a1e;
+  border-bottom-width: var(--design-accent__border-width);
+  border-bottom-style: var(--solid-border__style);
+  border-bottom-color: var(--dark);
+  background-color: var(--red);
 }
 
 .nav-img {
   width: 120px;
-  border-color: #4f9100;
-  border-style: outset;
-  border-width: 2px;
+  border-color: var(--green);
+  border-style: var(--outset-border__style);
+  border-width: var(--nav-elements__border-width);
   border-radius: 10px;
 }
 
 /*search bar styling*/
 #pokemonInput {
-  border-color: #4f9100;
-  border-style: outset;
-  border-width: 2px;
-  background: whitesmoke;
+  border-color: var(--green);
+  border-style: var(--outset-border__style);
+  border-width: var(--nav-elements__border-width);
+  background: var(--primary-color);
 }
 
 /*adding extra margin against fixed-top navbar*/
@@ -60,11 +63,11 @@ h1 {
   }
 
 .btn-light {
-  background-color: #72feff;
+  background-color: var(--blue);
   padding: 6px;
-  border-style: outset;
-  border-width: 3px;
-  border-color: #4f9100;
+  border-style: var(--outset-border__style);
+  border-width: var(--body-elements__border-width);
+  border-color: var(--green);
   border-radius: 20px;
   font: inherit;
   width: 200px
@@ -72,8 +75,8 @@ h1 {
 
 .btn-light:hover {
   cursor: pointer;
-  background-color:#ffd724;
-  border-color: #4f9100;
+  background-color: var(--yellow);
+  border-color: var(--green);
 }
 
 .list-group-item { 
@@ -86,25 +89,25 @@ h1 {
 
 /*modal styling*/
 .modal-content {
-  border-width: 3px;
-  border-color: #4f9100;
-  border-style: outset;
+  border-width: var(--body-elements__border-width);
+  border-color: var(--green);
+  border-style: var(--outset-border__style);
   border-radius: 10px;
   text-align: center;
 
 }
 .modal-header {
-  background-color: #ff2a1e;
+  background-color: var(--red);
   justify-content: center;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color:#4f9100
+  border-bottom-width: var(--design-accent__border-width);
+  border-bottom-style: var(--solid-border__style);
+  border-bottom-color: var(--dark);
 }
 
 /* fit the modal image inside the modal and add a small scale effect on hover*/
 .modal-img {
   width: 45%;
-  padding: 20px;
+  padding: 30px;
   transition: all .6s ease-in-out;
 }
 
@@ -113,10 +116,10 @@ h1 {
 }
 
 .modal-footer {
-  background-color: #ff2a1e;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color:#4f9100
+  background-color: var(--red);
+  border-top-width: var(--design-accent__border-width);
+  border-top-style: var(--solid-border__style);
+  border-top-color: var(--dark);
 }
 
 /*additional styling for smaller screens*/
