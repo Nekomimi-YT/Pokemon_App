@@ -123,14 +123,14 @@ let pokemonRepository = (function () {
 
   function showModal(item) {
     let modalBody = $('.modal-body');
-    let modalTitle = $('.modal-title');
     let modalHeader = $('.modal-header');
+    let modalTitle = $('.modal-title');
 
     //Clear title and body elements from the modal
 
-    modalTitle.empty();
     modalBody.empty();
     modalHeader.empty();
+    modalTitle.empty();
 
     //Create the elements for modal content
     let nameElement = $(
