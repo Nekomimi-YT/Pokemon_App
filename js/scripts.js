@@ -1,3 +1,4 @@
+'use strict'
 /* 
 Using first 152 data targets from this pokemon App for this project:
 (https://pokeapi.co/api/v2/pokemon/?limit=152)
@@ -96,7 +97,7 @@ let pokemonRepository = (function () {
         item.imageUrl = details.sprites.other.dream_world.front_default; //details = linked page
         item.height = details.height;
         item.weight = details.weight;
-        typeList = [];
+        let typeList = [];
         details.types.forEach((typeItem) => {
           //typeItem = types in the API
           let name = typeItem.type.name;
@@ -104,7 +105,7 @@ let pokemonRepository = (function () {
           typeList.push(name);
         });
         item.types = typeList;
-        abilityList = [];
+        let abilityList = [];
         details.abilities.forEach((abilityItem) => {
           //abiityItem = abilities in the API
           let name = abilityItem.ability.name;
