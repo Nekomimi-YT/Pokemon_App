@@ -130,6 +130,7 @@ let pokemonRepository = (function () {
 
     modalTitle.empty();
     modalBody.empty();
+    modalHeader.empty();
 
     //Create the elements for modal content
     let nameElement = $(
@@ -145,6 +146,7 @@ let pokemonRepository = (function () {
     //Append all elements to the modal
 
     modalTitle.append(nameElement);
+    modalHeader.append(modalTitle);
     modalBody.append(imageElement);
     modalBody.append(heightElement);
     modalBody.append(weightElement);
