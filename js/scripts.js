@@ -133,14 +133,14 @@ let pokemonRepository = (function () {
 
     //Create the elements for modal content
     let nameElement = $(
-      '<h1>' + item.name[0].toUpperCase() + item.name.substring(1) + '</h1>'
+      `<h1>${item.name[0].toUpperCase()}${item.name.substring(1)}</h1>`
     );
     let imageElement = $('<img class="modal-img">');
     imageElement.attr('src', item.imageUrl);
-    let heightElement = $('<p>' + 'Height: ' + item.height + '</p>');
-    let weightElement = $('<p>' + 'Weight: ' + item.weight + '</p>');
-    let typeElement = $('<p>' + 'Types: ' + item.types + '</p>');
-    let abilityElement = $('<p>' + 'Abilities: ' + item.abilities + '</p>');
+    let heightElement = $(`<p>Height: ${item.height}</p>`);
+    let weightElement = $(`<p>Weight: ${item.weight}</p>`);
+    let typeElement = $(`<p>Types: ${item.types}</p>`);
+    let abilityElement = $(`<p>Abilities: ${item.abilities}</p>`);
 
     //Append all elements to the modal
 
